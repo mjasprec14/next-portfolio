@@ -35,7 +35,7 @@ const Navbar = (props: Props) => {
       <div className='md:flex md:items-center justify-between'>
         <div className='flex justify-between items-center'>
           <div className='md:py-5 md:block'>
-            <h2 className='text-[20px] text-black-500 font-bold tracking-[12px]'>
+            <h2 className='text-[20px] text-black-500 font-bold tracking-[5px]'>
               MJ Asprec
             </h2>
           </div>
@@ -63,6 +63,7 @@ const Navbar = (props: Props) => {
                   offset={-100}
                   duration={500}
                   onClick={() => setNavbar(!navbar)}
+                  activeClass='active'
                   className='text-sm font-semibold uppercase text-gray-500 block lg:inline-block hover:text-neutral-500 dark:text-neutral-100 cursor-pointer'
                 >
                   {item.label}
