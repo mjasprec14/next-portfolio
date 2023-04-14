@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Me from '@/public/about.jpg';
+import Me from '@public/about.jpg';
 import { Link } from 'react-scroll';
 import { HiArrowDown } from 'react-icons/hi';
 
@@ -8,10 +8,14 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <section id='home'>
-      <div className='h-[90vh] overflow-x-hidden flex flex-col md:flex-row md:text-left md:space-x-6 items-center justify-center text-center sm:py-32 py-64 my-10 md:my-0'>
+    <section
+      id='home'
+      className='snap-start'
+    >
+      <div className='h-screen overflow-x-hidden flex flex-col md:flex-row md:text-left md:space-x-6 items-center justify-center text-center sm:py-32 py-64 my-10 md:my-0 overflow-y-hidden'>
         <div className='flex items-center justify-center md:w-1/2'>
           <Image
+            priority
             src={Me}
             alt='My photo'
             height={300}
