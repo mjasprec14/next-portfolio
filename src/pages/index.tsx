@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { About, Hero, Projects } from '@components/index';
+import { About, Hero, Projects, Navbar } from '@components/index';
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Head>
         <title>MJ Asprec&apos;s Portfolio</title>
       </Head>
+      <Navbar />
       <Hero />
       <About />
       <Projects />
