@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-scroll/modules';
+import { Link } from 'react-scroll';
 import { useTheme } from 'next-themes';
 import { RiMoonFill, RiSunLine } from 'react-icons/ri';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
@@ -28,34 +28,71 @@ const NAV_ITEMS: Array<NavItem> = [
 
 const Navbar = (props: Props) => {
   const { systemTheme, theme, setTheme } = useTheme();
-
   const currentTheme = theme === 'system' ? systemTheme : theme;
+  const [navbar, setNavbar] = useState(false);
   return (
-    <header className='w-full mx-auto px-4 bg-white shadow fixed top-0 z-50 dark:bg-stone-900 dark:border-b dark:border-stone-600'>
+    <header className='w-full mx-auto px-4 py-2 sm:px-20 md:py-0 bg-white shadow fixed top-0 z-50 dark:bg-stone-900 dark:border-b dark:border-stone-600'>
       <div className='md:flex md:items-center justify-between'>
-        <div>
+        <div className='flex justify-between items-center'>
           <div className='md:py-5 md:block'>
-            <h2 className='text-2xl font-bold'>MJ Asprec</h2>
+            <h2 className='text-[20px] text-black-500 font-bold tracking-[12px]'>
+              MJ Asprec
+            </h2>
+          </div>
+
+          <div className='md:hidden flex align-middle'>
+            <button onClick={() => setNavbar(!navbar)}>
+              <i>{navbar ? <IoMdClose size={20} /> : <IoMdMenu size={20} />}</i>
+            </button>
           </div>
         </div>
 
-        <div className='md:flex md:space-x-6'>
-          {NAV_ITEMS.map((item, idx) => (
-            <a key={idx}>{item.label}</a>
-          ))}
+        <div>
+          <div
+            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? 'block' : 'hidden'
+            }`}
+          >
+            <div className='flex flex-col items-center justify-center space-y-2 md:flex md:flex-row md:space-x-6 md:space-y-0 '>
+              {NAV_ITEMS.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.page}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  onClick={() => setNavbar(!navbar)}
+                  className='text-sm font-semibold uppercase text-gray-500 block lg:inline-block hover:text-neutral-500 dark:text-neutral-100 cursor-pointer'
+                >
+                  {item.label}
+                </Link>
+              ))}
 
-          {currentTheme === 'dark' ? (
-            <button
-              onClick={() => setTheme('light')}
-              className='bg-slate-100 p-2 rounded-xl'
-            >
-              <RiSunLine />
-            </button>
-          ) : (
-            <button onClick={() => setTheme('dark')}>
-              <RiMoonFill className='bg-slate-100 p-2 rounded-xl' />
-            </button>
-          )}
+              {currentTheme === 'dark' ? (
+                <button
+                  onClick={() => setTheme('light')}
+                  className='p-2 rounded-xl'
+                >
+                  <i>
+                    <RiSunLine
+                      size={20}
+                      color='white'
+                    />
+                  </i>
+                </button>
+              ) : (
+                <button
+                  onClick={() => setTheme('dark')}
+                  className=' p-2 rounded-xl'
+                >
+                  <i>
+                    <RiMoonFill size={20} />
+                  </i>
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </header>
