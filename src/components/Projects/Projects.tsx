@@ -3,6 +3,7 @@ import React from 'react';
 import Burger from '@public/burger.jpg';
 import Link from 'next/link';
 import { BsGithub, BsArrowUpRightSquare } from 'react-icons/bs';
+import { SlideUp } from '@components/index';
 
 type Props = {};
 
@@ -44,50 +45,52 @@ function Projects({}: Props) {
         <div className='flex flex-col space-y-20 mt-8'>
           {projects?.map((project, idx) => (
             <div key={idx}>
-              <div className='flex flex-col space-y-3 md:flex-row md:space-x-12'>
-                <div className='md:w-1/2'>
-                  <Link
-                    href={project.link}
-                    target='_blank'
-                  >
-                    <Image
-                      src={Burger}
-                      alt='project'
-                      className='rounded-xl shadow-xl hover:opacity-70'
-                    />
-                  </Link>
-                </div>
-                <div className='md:w-1/2 mt-4 space-y-2 px-2 md:px-0 md:mt-0'>
-                  <h3 className='text-sm font-semibold md:text-2xl text-neutral-600 uppercase tracking-[10px]'>
-                    {project?.name}
-                  </h3>
-
-                  <p className='text-xs leading-7 text-gray-500  dark:text-neutral-400 md:text-xl'>
-                    {project?.description}
-                  </p>
-
-                  <div className='flex flex-row justify-end md:justify-start align-bottom space-x-2'>
+              <SlideUp offset='-300px 0px -300px 0px'>
+                <div className='flex flex-col space-y-3 md:flex-row md:space-x-12 animate-slideUpCubiBezier animation-delay-5'>
+                  <div className='md:w-1/2'>
                     <Link
                       href={project.link}
                       target='_blank'
                     >
-                      <BsGithub
-                        size={30}
-                        className='hover:-translate-y-1 transition-transform cursor-pointer'
-                      />
-                    </Link>
-                    <Link
-                      href={project.link}
-                      target='_blank'
-                    >
-                      <BsArrowUpRightSquare
-                        size={30}
-                        className='hover:-translate-y-1 transition-transform cursor-pointer'
+                      <Image
+                        src={Burger}
+                        alt='project'
+                        className='rounded-xl shadow-xl hover:opacity-70'
                       />
                     </Link>
                   </div>
+                  <div className='md:w-1/2 mt-4 space-y-2 px-2 md:px-0 md:mt-0'>
+                    <h3 className='text-sm font-semibold md:text-2xl text-neutral-600 uppercase tracking-[10px]'>
+                      {project?.name}
+                    </h3>
+
+                    <p className='text-xs leading-7 text-gray-500  dark:text-neutral-400 md:text-xl'>
+                      {project?.description}
+                    </p>
+
+                    <div className='flex flex-row justify-end md:justify-start align-bottom space-x-2'>
+                      <Link
+                        href={project.link}
+                        target='_blank'
+                      >
+                        <BsGithub
+                          size={30}
+                          className='hover:-translate-y-1 transition-transform cursor-pointer'
+                        />
+                      </Link>
+                      <Link
+                        href={project.link}
+                        target='_blank'
+                      >
+                        <BsArrowUpRightSquare
+                          size={30}
+                          className='hover:-translate-y-1 transition-transform cursor-pointer'
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </SlideUp>
             </div>
           ))}
         </div>
