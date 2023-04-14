@@ -33,12 +33,13 @@ function About({}: Props) {
       id='about'
       className='snap-center'
     >
-      <div className='h-screen my-12 md:pt-16 md:pb-48'>
+      <div className='h-screen mb-[32rem] md:mb-0 md:space-y-16 my-12 md:pt-16 md:pb-48'>
         <h1 className='text-2xl mb-8 md:mb-0 text-center font-semibold tracking-[10px] uppercase'>
           About me
+          <hr className='w-28 h-1 mx-auto my-2 bg-teal-500 border-0' />
         </h1>
 
-        <div className='flex flex-col space-y-10 px-5 items-stretch justify-center align-top md:flex-row md:text-left md:p-4 md:space-y-0 md:space-x-10'>
+        <div className='flex flex-col items-center space-y-10 px-5 md:items-stretch justify-center md:align-top md:flex-row md:text-left md:p-4 md:space-y-0 md:space-x-10'>
           <div className='md:w-1/2 space-y-4'>
             <h1 className='text-center uppercase text-lg text-gray-500 font-bold mb-6 md:text-left'>
               Get to know me!
@@ -46,9 +47,9 @@ function About({}: Props) {
             <p>
               Hi, my name is MJ and I am a{' '}
               <span className='font-semibold underline decoration-[#F7AB0A]/50'>
-                high ambitious
+                highly ambitious
               </span>
-              ,
+              ,{' '}
               <span className='font-semibold underline decoration-[#F7AB0A]/50'>
                 self-motivated
               </span>
