@@ -9,7 +9,7 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     <section id='home'>
-      <div className='flex flex-col md:flex-row md:text-left md:space-x-6 items-center justify-center text-center my-10 sm:py-32 py-64'>
+      <div className='h-[90vh] overflow-x-hidden flex flex-col md:flex-row md:text-left md:space-x-6 items-center justify-center text-center sm:py-32 py-64 my-10 md:my-0'>
         <div className='flex items-center justify-center md:w-1/2'>
           <Image
             src={Me}
@@ -45,7 +45,7 @@ const Hero = (props: Props) => {
         </div>
       </div>
 
-      <div className='flex flex-row items-center justify-center'>
+      <div className='sticky bottom-1 flex flex-row items-center justify-center'>
         <Link
           to='about'
           activeClass='active'
@@ -54,7 +54,10 @@ const Hero = (props: Props) => {
           offset={-100}
           duration={500}
         >
-          <HiArrowDown size={35} />
+          <HiArrowDown
+            size={35}
+            className='animate-bounce cursor-pointer'
+          />
         </Link>
       </div>
     </section>
