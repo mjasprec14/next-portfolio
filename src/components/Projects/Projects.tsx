@@ -46,8 +46,8 @@ function Projects({}: Props) {
           {projects?.map((project, idx) => (
             <div key={idx}>
               <SlideUp offset='-300px 0px -300px 0px'>
-                <div className='h-full md:w-[96vh] flex flex-col flex-shrink-0 align-middle items-center justify-center animate-slideUpCubiBezier animation-delay-5'>
-                  <div className='md:w-1/2'>
+                <div className='h-full w-screen md:w-[50vw] xl:w-5/6 flex flex-col flex-shrink-0 items-center justify-center animate-slideUpCubiBezier animation-delay-5'>
+                  <div className='w-1/2'>
                     <Link
                       href={project.link}
                       target='_blank'
@@ -59,7 +59,7 @@ function Projects({}: Props) {
                       />
                     </Link>
                   </div>
-                  <div className='md:w-1/2 mt-4 space-y-2 px-2 md:px-0 md:mt-0'>
+                  <div className='w-1/2 mt-4 space-y-2 px-2 md:px-0 md:mt-0'>
                     <h3 className='text-sm font-semibold md:text-2xl text-neutral-600 uppercase tracking-[10px]'>
                       {project?.name}
                     </h3>
