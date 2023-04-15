@@ -39,7 +39,7 @@ const Navbar = (props: Props) => {
       <div className='md:flex md:items-center justify-between'>
         <div className='flex justify-between items-center'>
           <div className='md:py-5 md:block'>
-            <h2 className='text-[20px] text-black-500 font-bold tracking-[5px]'>
+            <h2 className='text-2xl text-gray-500 font-semibold tracking-[5px] dark:text-neutral-100'>
               MJ Asprec
             </h2>
           </div>
