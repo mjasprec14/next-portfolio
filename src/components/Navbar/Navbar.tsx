@@ -31,7 +31,11 @@ const Navbar = (props: Props) => {
   const currentTheme = theme === 'system' ? systemTheme : theme;
   const [navbar, setNavbar] = useState(false);
   return (
-    <header className='w-full mx-auto px-4 py-2 sm:px-20 md:py-0 bg-white shadow fixed top-0 z-50 dark:bg-stone-900 dark:border-b dark:border-stone-600'>
+    <header
+      className='w-full mx-auto px-4 py-2 sm:px-20 md:py-0  shadow fixed top-0 z-50  dark:border-b dark:border-teal-600
+    bg-zinc-50 dark:bg-zinc-900 
+    '
+    >
       <div className='md:flex md:items-center justify-between'>
         <div className='flex justify-between items-center'>
           <div className='md:py-5 md:block'>
