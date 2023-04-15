@@ -36,17 +36,17 @@ const projects = [
 function Projects({}: Props) {
   return (
     <section id='projects'>
-      <div className='h-screen px-6'>
+      <div className='h-screen w-full'>
         <h1 className='text-2xl mb-8  text-center font-semibold tracking-[10px] uppercase'>
           Projects
           <hr className='w-28 h-1 mx-auto my-2 bg-teal-500 border-0' />
         </h1>
 
-        <div className='flex flex-col space-y-20 mt-8'>
+        <div className='h-4/6 overflow-y-hidden flex flex-row scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0D9488]/80'>
           {projects?.map((project, idx) => (
             <div key={idx}>
               <SlideUp offset='-300px 0px -300px 0px'>
-                <div className='flex flex-col space-y-3 md:flex-row md:space-x-12 animate-slideUpCubiBezier animation-delay-5'>
+                <div className='h-full md:w-[96vh] flex flex-col flex-shrink-0 align-middle items-center justify-center animate-slideUpCubiBezier animation-delay-5'>
                   <div className='md:w-1/2'>
                     <Link
                       href={project.link}
